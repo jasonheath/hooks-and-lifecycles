@@ -1,3 +1,10 @@
 #!/bin/bash
 
-printf "\n\t§ %s hook\n\n" "$(basename "$0")"
+echo "leader is {{svc.leader.sys.ip}}"
+
+readonly lagniappe="Sonny Boy Williamson"
+
+while true; do
+  printf "\n\t§ %s %s (%s)\n\n" "$lagniappe" "$(basename "$0")" "$(date +"%H:%M:%S")"
+  sleep 3
+done
