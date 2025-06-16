@@ -1,3 +1,6 @@
 #!/bin/bash
 
-printf "\n\t§ %s hook\n\n" "$(basename "$0")"
+declare -ir i=$RANDOM
+printf "\n\t§ %s hook, random priority is %i\n\n" "$(basename "$0")" i
+
+return $i
