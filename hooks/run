@@ -2,7 +2,7 @@
 
 echo "leader is {{svc.leader.sys.ip}}"
 
-readonly lagniappe="Sonny Boy Williamson"
+readonly lagniappe="{{cfg.lagniappe}}"
 
 while true; do
   printf "\n\t§ %s %s (%s)\n\n" "$lagniappe" "$(basename "$0")" "$(date +"%H:%M:%S")"
