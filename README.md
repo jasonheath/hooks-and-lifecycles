@@ -1,6 +1,6 @@
-# jahmin
+# hooks-and-lifecycles
 
-Brief description of jahmin
+Brief description of hooks-and-lifecycles
 
 ## Maintainers
 
