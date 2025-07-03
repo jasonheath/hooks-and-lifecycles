@@ -1,10 +1,17 @@
 #!/bin/bash
 
+exec 2>&1
+
 echo "leader is {{svc.leader.sys.ip}}"
 
-readonly lagniappe="{{cfg.lagniappe}}"
-
 while true; do
-  printf "\n\t§ %s %s (%s)\n\n" "$lagniappe" "$(basename "$0")" "$(date +"%H:%M:%S")"
-  sleep 3
+  # shellcheck source=../config/env_vars.sh
+  source "{{pkg.svc_config_path}}/env_vars.sh"
+  printf "§ %s : %s : %s hook : lagniappe is '%s'\n" "{{sys.hostname}}" "$(date +"%H:%M:%S")" "$(basename "$0")" "${LAGNIAPPE}"
+  sleep $(( (RANDOM % 9) + 1 ))
 done
+
+  # printf "\n\t§ %s %s (%s)" "${LAGNIAPPE}\n\n" "$(basename "$0")" "$(date +"%H:%M:%S")"
+  # printf "\n\t§ %s %s (%s)" "${LAGNIAPPE}" "$(basename "$0")" "$(date +"%H:%M:%S")"
+  # printf "\n  § %s %s hook executed @ (%s) on {{sys.hostname}} " "${LAGNIAPPE}" "$(basename "$0")" "$(date +"%H:%M:%S")"
+  # printf "\n§§ %s %s hook executed @ (%s) on {{sys.hostname}} " "${LAGNIAPPE}" "$(basename "$0")" "$(date +"%H:%M:%S")"
